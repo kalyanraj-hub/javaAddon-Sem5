@@ -25,7 +25,7 @@ public class student {
 	
 
 	public static void main(String[] args) {
-		system a2=new system("bharath",99);
+		system a2=new system("kalyan",50);
 
 	}
 
