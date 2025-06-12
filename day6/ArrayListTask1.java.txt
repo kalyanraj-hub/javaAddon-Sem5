@@ -1,0 +1,22 @@
+package javaAddon;
+import java.util.ArrayList;
+
+public class ArrayListPrg {
+
+	public static void main(String[] args) {
+		ArrayList<Object> arr=new ArrayList<Object>();
+		
+		
+		arr.add("ram");
+		arr.add("B");
+		arr.add("computer science");
+		arr.add("3 Year");
+		arr.add(0,"john");
+		arr.add(0,"Hari");
+		for(Object data:arr) {
+			System.out.println(data);
+		}
+
+	}
+
+}
