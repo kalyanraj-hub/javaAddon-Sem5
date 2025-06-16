@@ -1,0 +1,99 @@
+mysql> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| amirtha            |
+| information_schema |
+| java               |
+| kgcasbca           |
+| login              |
+| mysql              |
+| newstudent         |
+| performance_schema |
+| phpmyadmin         |
+| student_db         |
+| studentdb          |
+| test               |
++--------------------+
+12 rows in set (0.00 sec)
+
+mysql> create database Employee;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> create table Employee;
+ERROR 1046 (3D000): No database selected
+mysql> use Employee;
+Database changed
+mysql> create table Employee;
+ERROR 1113 (42000): A table must have at least 1 column
+mysql> create table Employee(
+    -> empid INT PRIMART KEY,
+    -> name varchar(25),
+    -> dep varchar(25),
+    -> salary INT,
+    -> joindate DATE
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'KEY,
+name varchar(25),
+dep varchar(25),
+salary INT,
+joindate DATE
+)' at line 2
+mysql> create table Employee(
+    -> empid INT PRIMARY KEY,
+    -> name varchar(25),
+    -> dep varchar(25),
+    -> salary INT,
+    -> joindate DATE
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> desc Employee;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| empid    | int(11)     | NO   | PRI | NULL    |       |
+| name     | varchar(25) | YES  |     | NULL    |       |
+| dep      | varchar(25) | YES  |     | NULL    |       |
+| salary   | int(11)     | YES  |     | NULL    |       |
+| joindate | date        | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> INSERT INTO Employee(empid,name,dep,salary,joindate) VALUES
+    -> (1, 'soma','creative',1000000,'2026-02-05'),
+    -> (2,'chandran','finance',200000,'2023-01-04'),
+    -> (3,'henry','marketing',20000,'2023-01-04'),
+    -> (4,'kathir','editing',100000,'2010-01-12'),
+    -> (5,'levy','sale',100000,'2020-10-16');
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> desc Employee
+    -> ;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| empid    | int(11)     | NO   | PRI | NULL    |       |
+| name     | varchar(25) | YES  |     | NULL    |       |
+| dep      | varchar(25) | YES  |     | NULL    |       |
+| salary   | int(11)     | YES  |     | NULL    |       |
+| joindate | date        | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> select*from Employee
+    -> ;
++-------+----------+-----------+---------+------------+
+| empid | name     | dep       | salary  | joindate   |
++-------+----------+-----------+---------+------------+
+|     1 | soma     | creative  | 1000000 | 2026-02-05 |
+|     2 | chandran | finance   |  200000 | 2023-01-04 |
+|     3 | henry    | marketing |   20000 | 2023-01-04 |
+|     4 | kathir   | editing   |  100000 | 2010-01-12 |
+|     5 | levy     | sale      |  100000 | 2020-10-16 |
++-------+----------+-----------+---------+------------+
+5 rows in set (0.00 sec)
+
+mysql>
