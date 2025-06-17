@@ -1,3 +1,4 @@
+//multiRow Functions
 mysql> select avg(salary),sum(salary),max(salary)
     -> from Employee;
 +-------------+-------------+-------------+
