@@ -1,0 +1,13 @@
+mysql> select count(*),empid
+    -> from Employee
+    -> where dep='creative'
+    -> group by empid
+    -> having count(*)>=1;
++----------+-------+
+| count(*) | empid |
++----------+-------+
+|        1 |     1 |
++----------+-------+
+1 row in set (0.00 sec)
+
+mysql>
